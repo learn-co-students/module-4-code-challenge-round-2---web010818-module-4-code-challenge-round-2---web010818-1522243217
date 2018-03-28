@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Search = () => {
-  return (
+
+
+
+
+ const Search =(props)=> {
+
+
+
+const handleChange=(e)=> {
+  props.search(e.target.value)
+}
+
+ return (
     <div className="ui huge fluid icon input">
-      <input
+      <input onChange={handleChange}
         type="text"
         placeholder={"Search your Recent Transactions"}
       />
@@ -11,5 +22,9 @@ const Search = () => {
     </div>
   )
 }
+
+
+
+
 
 export default Search

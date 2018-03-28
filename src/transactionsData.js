@@ -29,4 +29,4 @@ const transactions = [
   }
 ]
 
-export {transactions}
+export default transactions;
