@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Search = () => {
-  return (
-    <div className="ui huge fluid icon input">
-      <input
-        type="text"
-        placeholder={"Search your Recent Transactions"}
-      />
-      <i className="circular search link icon"></i>
-    </div>
-  )
+const Search = (props) => {
+
+  const handleChange = (e) =>{
+    let term = e.target.value
+    props.handleChange(term)
+  }
+
+    return (
+      <div className="ui huge fluid icon input">
+        <input
+          onChange={handleChange}
+          type="text"
+          placeholder={"Search your Recent Transactions"}
+        />
+        <i className="circular search link icon"></i>
+      </div>
+    )
+
 }
 
 export default Search
