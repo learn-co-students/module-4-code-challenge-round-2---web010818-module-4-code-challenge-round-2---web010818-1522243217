@@ -1,6 +1,22 @@
 import React from 'react'
+import uuid from "uuid"
 
-const TransactionsList = () => {
+const TransactionsList = (props) => {
+
+console.log(props);
+   let tableRows =
+      props.transactionsData.map((transaction) => {
+      return(
+        <tr key={uuid()}>
+          <th>{transaction.posted_at}</th>
+          <th>{transaction.description}</th>
+          <th>{transaction.category}</th>
+          <th>{transaction.amount}</th>
+        </tr>
+       )
+      })
+
+
 
   return (
     <table className="ui celled striped padded table">
@@ -28,7 +44,12 @@ const TransactionsList = () => {
           </th>
         </tr>
 
-        {"... your code here..."}
+
+
+          {tableRows}
+
+
+
 
       </tbody>
     </table>
