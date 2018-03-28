@@ -1,14 +1,16 @@
 import React from 'react'
 
-const Transaction = () => {
-  return (
-    <tr>
-      <td>{"...your code here"}</td>
-      <td>{"...your code here"}</td>
-      <td>{"...your code here"}</td>
-      <td>{"...your code here"}</td>
-    </tr>
-  )
-}
+const Transaction = (props) => {
 
-export default Transaction
+   return (
+     <tr>
+
+      <td>{props.transactionData.posted_at}</td>
+      <td>{props.transactionData.description}</td>
+      <td>{props.transactionData.category}</td>
+      <td>{props.transactionData.amount}</td>
+     </tr>
+   )
+ }
+
+ export default Transaction
