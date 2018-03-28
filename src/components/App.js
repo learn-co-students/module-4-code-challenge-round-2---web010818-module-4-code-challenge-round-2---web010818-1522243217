@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import AccountContainer from './AccountContainer'
-import RealContainer from './RealContainer'
 
 import '../stylesheets/App.css'
 
@@ -12,7 +11,7 @@ class App extends Component {
           <h2>The Royal Bank of Flatiron</h2>
         </div>
 
-        <RealContainer />
+        <AccountContainer />
 
       </div>
     )

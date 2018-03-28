@@ -2,21 +2,19 @@ import React from 'react'
 import Transaction from './Transaction'
 
 const TransactionsList = (props) => {
-    // mappedTransactions
-    // console.log(props.transaction);
-    let transaction = props.transactions.map( transaction => {
-      return <Transaction transaction={transaction} key={transaction.id} />
+
+
+  const findTransactions = () => {
+
+    let transactionsFilter = props.transactions.filter((transaction)=>{
+      return transaction.description.toLowerCase().includes(props.searchTerm.toLowerCase())
+      || transaction.category.toLowerCase().includes(props.searchTerm.toLowerCase())
     })
 
-//     let allTransactions = props.transactions
-//
-// let filteredTransactions = allTransactions.filter(t => {
-//
-//     return (t.description).toLowerCase().includes(props.input.toLowerCase()) || (t.category).toLowerCase().includes(props.input.toLowerCase())
-//
-// })
-
-
+    return transactionsFilter.map((transactionSingle)=>{
+      return <Transaction transactionData={transactionSingle} key={transactionSingle.id} />
+    })
+  }
 
 
   return (
@@ -45,7 +43,7 @@ const TransactionsList = (props) => {
           </th>
         </tr>
 
-        {transaction}
+       {findTransactions()}
 
 
       </tbody>
